@@ -36,7 +36,7 @@ void menuStudents(void){
 	printf("[3]: Search a students\n");
 	printf("[4]: Edit a students\n");
 	printf("[5]: Delete a student\n");
-	printf("[6]: Sort Students By Name student\n") ;
+	printf("[6]: Sort Students By Name\n") ;
 	printf("[0]: Exit the Program\n");
 	printf("Enter The Choice: ");
 }
@@ -260,7 +260,7 @@ void editStudent(Student students[], int *length) {
 	    }
 	    if (valid && strcmp(students[found].name, input) != 0) {
 	        strcpy(students[found].name, input);
-	        isChanged = 1; // Ğánh d?u là có s? thay ğ?i
+	        isChanged = 1; // ÃÃ¡nh d?u lÃ  cÃ³ s? thay Ã°?i
 	    } else if (valid) {
 	        printf("Ten moi trung voi ten hien tai. Vui long nhap ten khac.\n");
 	        valid = 0;
@@ -270,7 +270,7 @@ void editStudent(Student students[], int *length) {
       do {
         printf("So Dien Thoai (Nhap so 0 de bo qua): ");
         fgets(input, sizeof(input), stdin);
-        input[strcspn(input, "\n")] = '\0'; // Lo?i b? kí t? xu?ng d?ng
+        input[strcspn(input, "\n")] = '\0'; // Lo?i b? kÃ­ t? xu?ng d?ng
         if (strcmp(input, "0") == 0) break; 
 
         valid = 1;
@@ -289,7 +289,7 @@ void editStudent(Student students[], int *length) {
         }
 
         if (valid) {
-            // Ki?m tra xem s? ği?n tho?i ğ? t?n t?i chıa
+            // Ki?m tra xem s? Ã°i?n tho?i Ã°? t?n t?i chÃ½a
             if (isDuplicatePhoneStudent(students, *length, input)) {
                 printf("So dien thoai %s da ton tai. Vui long nhap so dien thoai khac.\n", input);
                 valid = 0;
@@ -304,7 +304,7 @@ void editStudent(Student students[], int *length) {
 	do {
         printf("Nhap Email (Nhap so 0 de bo qua): ");
         fgets(input, sizeof(input), stdin);
-        input[strcspn(input, "\n")] = '\0'; // Lo?i b? kí t? xu?ng d?ng
+        input[strcspn(input, "\n")] = '\0'; // Lo?i b? kÃ­ t? xu?ng d?ng
         if (strcmp(input, "0") == 0) break;
 
         const char *gmailSuffix = "@gmail.com";
@@ -314,7 +314,7 @@ void editStudent(Student students[], int *length) {
         if (len < suffixLen || strcmp(input + len - suffixLen, gmailSuffix) != 0) {
             printf("Email phai co dang '@gmail.com'. Vui long nhap lai.\n");
         } else {
-            // Ki?m tra xem email ğ? t?n t?i chıa
+            // Ki?m tra xem email Ã°? t?n t?i chÃ½a
             if (isDuplicateEmailStudent(students, *length, input)) {
                 printf("Email %s da ton tai. Vui long nhap email khac.\n", input);
             } else {
@@ -575,7 +575,7 @@ void addTeacher(Teacher teachers[], int *length) {
 
             if (len < suffixLen || strcmp(email + len - suffixLen, gmailSuffix) != 0) {
                 printf("Email phai co dang '@gmail.com'. Vui long nhap lai.\n");
-            } else if (isDuplicateEmailTeacher(teachers, *length, email)) { // Ki?m tra trùng email
+            } else if (isDuplicateEmailTeacher(teachers, *length, email)) { // Ki?m tra trÃ¹ng email
                 printf("Email %s da ton tai. Vui long nhap email khac.\n", email);
             } else {
                 break;
